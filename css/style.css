@@ -4,14 +4,15 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(12, 134, 199);
+    background-color: rgb(31, 33, 34);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
-.container {
-    background-color: rgb(166, 208, 231);
+.calculator {
+    background-color: rgb(172, 236, 242);
     width: 450px;
-    margin: 25px auto;
+    margin: 45px auto;
     padding: 25px;
     border-radius: 8px;
     
@@ -19,15 +20,31 @@ body{
 .display {
     height: 150px;
     width:400px;
-    background-color: #69bce6 ;
+    background-color: #7bc7ed;
+    color: #272c2d;
     margin-bottom: 25px;
     border-radius: 5px;
+    padding: 25px;
+    font-size: 22px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
 }
+.formula{
+     align-self: flex-start;
+}
+.result {
+    align-self: flex-end;
+    font-size: 28px;
+}
+
 button {
     padding: 20px;
     border-radius: 3px;
-    font-size: 18px;
-    text-transform: uppercase;
+    font-size: 22px;
+    color: #272c2d;
     font-weight: 500;
     
 }
@@ -38,22 +55,36 @@ button {
     
 }
 .num {
-    background-color: #69bce6 ;
-    border: 1px solid #69bce6 ;
+    background-color: #7bc7ed ;
+    border: 1px solid #7bc7ed ;
     border-radius: 5px;
 }
 .operation {
-    background-color: #3aade7 ;
-    border: 1px solid #3aade7 ;
+    background-color: #119bdf ;
+    border: 1px solid #119bdf ;
     border-radius: 5px;
 }
 #del {
     grid-column: span 2;
-    background-color: #ed9387;
-    border: 1px solid #ed9387;
+    text-transform: uppercase;
+    background-color: #ee8072;
+    border: 1px solid #ee7464;
 }
 #clr{
     grid-column: span 2; 
-    background-color: #99ecbb; 
-    border: 1px solid #99ecbb;
+    text-transform: uppercase;
+    background-color: #77eca8; 
+    border: 1px solid #5ceb98;
+}
+
+.footer {
+     height: 50px;
+     width: 100%;
+     padding: 25px 25px 40px 25px;
+     background-color: #414a4c;
+     color: rgb(172, 236, 242);
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     text-align: center;
 }
