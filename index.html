@@ -5,31 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer=""></script>
     <title>Calculator</title>
 </head>
 <body>
-    <div class="container">
-        <div class="display"></div>
-    <div class="buttons">
+    <div class="calculator">
+        <div class="display">
+            <div id="formula"></div>
+            <div id="result">13</div>
+        </div>
+        <div class="buttons">
             <button id="clr">clear</button>
             <button id="del">delete</button>
-            <button class="num">7</button>
-            <button class="num">8</button>
-            <button class="num">9</button>
-            <button class="operation">/</button>
-            <button class="num">4</button>
-            <button class="num">5</button>
-            <button class="num">6</button>
-            <button class="operation">x</button>
-            <button class="num">1</button>
-            <button class="num">2</button>
-            <button class="num">3</button>
-            <button class="operation">-</button>
-            <button class="num">.</button>
-            <button class="num">0</button>
-            <button class="operation">=</button>
-            <button class="operation">+</button>  
+            <button class="num input">7</button>
+            <button class="num input">8</button>
+            <button class="num input">9</button>
+            <button class="operation input">/</button>
+            <button class="num input">4</button>
+            <button class="num input">5</button>
+            <button class="num input">6</button>
+            <button class="operation input">x</button>
+            <button class="num input">1</button>
+            <button class="num input">2</button>
+            <button class="num input">3</button>
+            <button class="operation input">-</button>
+            <button class="num input">.</button>
+            <button class="num input">0</button>
+            <button class="operation" id="equal">=</button>
+            <button class="operation input">+</button>      
+        </div>
     </div>
-    </div>
+    <div class="footer">Copyright © 2022 SamreenKausar</div>
 </body>
 </html>
