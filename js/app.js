@@ -4,7 +4,8 @@ const inputBtn = document.querySelectorAll(".input");
 const equal = document.querySelector("#equal");
 const clearBtn = document.querySelector("#clr");
 let expression ;
-const regex=/\+|\-|\*|\//
+const regex1=/\+|\-|\*|\//;
+const regex2 = /[0-9]/;
 
 inputBtn.forEach(btn=>{
   btn.addEventListener('click', (e)=>{
@@ -14,37 +15,61 @@ inputBtn.forEach(btn=>{
 
 equal.addEventListener('click', (e)=>{
   expression = formula.textContent;
-  let [var1, var2] = expression.split(regex);
-  console.log(var1, var2);
-  let [operator] = expression.match(regex);
-  console.log(operator);
-  operation(operator, var1, var2);
+  let variables = expression.split(regex1).map((val) => {return parseInt(val)});
+  console.log(variables);
+  let operators = expression.split('').filter((el)=>{
+    if(el === '+'|el ==='-'|el === '/'|el ==='*')
+    {
+      return el;
+    }
   });
+  console.log(operators);
+  operation(operators, variables);
+  });
+
+
 const clearValue = function(){
   formula.textContent = '';
   result.textContent = '';
 }
 clearBtn.addEventListener('click', clearValue);
-const operation = function(op, a , b){
+
+
+const operation = function(op,vals){
   let answer;
-  const var1 = parseInt(a);
-  const var2 = parseInt(b);
-  if(op==='+'){
-    answer = add(var1,var2);
-    result.textContent =answer;
+  
+
+
+  for(i=0; i<op.length; i++){
+    console.log(op[i]);
+    if(op[i]==='+'){
+      answer = add(vals[i],vals[i+1]);
+      console.log(answer);
+  //     result.textContent =answer;
+      vals[i+1] = answer;
+
+    }
+    if(op[i]==='-'){
+      answer = subtract(vals[i],vals[i+1]);
+      console.log(answer);
+      vals[i+1] =answer;
+  //     result.textContent =answer;
+    }
+    if(op[i]==='*'){
+      answer = multiply(vals[i],vals[i+1]);
+      vals[i+1] =answer;
+      console.log(answer);
+      // result.textContent =answer;
+    }
+    if(op[i]==='/'){
+      answer = divide(vals[i],vals[i+1]);
+      vals[i+1] =answer;
+      console.log(answer);
+      // result.textContent =answer;
+    }
+    
   }
-  if(op==='-'){
-    answer = subtract(var1,var2);
-    result.textContent =answer;
-  }
-  if(op==='*'){
-    answer = multiply(var1,var2);
-    result.textContent =answer;
-  }
-  if(op==='/'){
-    answer = divide(var1,var2);
-    result.textContent =answer;
-  }
+  result.textContent = answer;
 
 }
 
