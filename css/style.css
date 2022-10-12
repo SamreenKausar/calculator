@@ -8,13 +8,17 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
+.container{
+    height: 100vh;
+}
 
 .calculator {
     background-color: rgb(172, 236, 242);
     width: 450px;
-    margin: 45px auto;
+    margin: 200px auto;
     padding: 25px;
     border-radius: 8px;
+    
     
 }
 .display {
